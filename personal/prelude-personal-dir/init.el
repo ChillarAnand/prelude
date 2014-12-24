@@ -1,3 +1,2 @@
-;; emacs for pyton
+;; emacs for python
 (load-file "/home/anand/.emacs.d/prelude-personal-dir/emacs-for-python/epy-init.el")
-
