@@ -196,3 +196,41 @@ by Prelude.")
 (setq jedi:complete-on-dot t)
 
 
+;; split window vertically
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
+
+;; remove scroll bar
+(scroll-bar-mode -1)
+
+
+;; auto save every 5 seconds
+(setq auto-save-timeout 5)
+
+
+;; kill other buffers
+(defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer
+        (delq (current-buffer)
+              (remove-if-not 'buffer-file-name (buffer-list)))))
+
+
+;; unzip zipped file dired
+(eval-after-load "dired-aux"
+  '(add-to-list 'dired-compress-file-suffixes
+                '("\\.zip\\'" ".zip" "unzip")))
+
+
+;; org reveal
+(load-file "/home/anand/.emacs.d/personal/prelude-personal-dir/ox-reveal.el")
+(load-file "/home/anand/.emacs.d/personal/prelude-personal-dir/htmlize.el")
+(setq org-reveal-root "file:///home/anand/Projects/js/reveal.js/js/reveal.js")
+(require 'ox-reveal)
+(require 'htmlize)
+
+
+;; yow - easter egg
+(setq yow-file "~/.emacs.d/yow.txt.gz")
