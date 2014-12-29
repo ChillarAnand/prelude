@@ -241,6 +241,7 @@ by Prelude.")
 
 
 ;; mysql for emacs
+(load-file "~/.emacs.d/personal/prelude-personal-dir/mysql.el")
 (require 'mysql)
 
 
