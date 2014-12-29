@@ -239,3 +239,6 @@ by Prelude.")
   (shell-command "wget bit.ly/emacs-yow -O ~/.emacs.d/yow.txt.gz"))
 (setq yow-file "~/.emacs.d/yow.txt.gz")
 
+
+;; mysql for emacs
+(require 'mysql)
