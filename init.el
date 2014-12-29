@@ -146,9 +146,9 @@ by Prelude.")
 
 
 ;; emacs for python
-(load-file "/home/anand/.emacs.d/personal/prelude-personal-dir/emacs-for-python/epy-init.el")
+(load-file "~/.emacs.d/personal/prelude-personal-dir/emacs-for-python/epy-init.el")
 
-(add-to-list 'load-path "/home/anand/.emacs.d/personal/prelude-personal-dir/emacs-for-python/") ;; tell where to load the various files
+(add-to-list 'load-path "~/.emacs.d/personal/prelude-personal-dir/emacs-for-python/") ;; tell where to load the various files
 (require 'epy-setup)      ;; It will setup other loads, it is required!
 (require 'epy-python)     ;; If you want the python facilities [optional]
 (require 'epy-completion) ;; If you want the autocompletion settings [optional]
@@ -182,6 +182,8 @@ by Prelude.")
 (require 'package)
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+(package-initialize)
+(elpy-enable)
 
 
 ;;jedi -  Standard package.el + MELPA setup
@@ -225,12 +227,15 @@ by Prelude.")
 
 
 ;; org reveal
-(load-file "/home/anand/.emacs.d/personal/prelude-personal-dir/ox-reveal.el")
-(load-file "/home/anand/.emacs.d/personal/prelude-personal-dir/htmlize.el")
+(load-file "~/.emacs.d/personal/prelude-personal-dir/ox-reveal.el")
+(load-file "~/.emacs.d/personal/prelude-personal-dir/htmlize.el")
 (setq org-reveal-root "file:///home/anand/Projects/js/reveal.js/js/reveal.js")
 (require 'ox-reveal)
 (require 'htmlize)
 
 
 ;; yow - easter egg
+(unless (file-exists-p "~/.emacs.d/yow.txt.gz")
+  (shell-command "wget bit.ly/emacs-yow -O ~/.emacs.d/yow.txt.gz"))
 (setq yow-file "~/.emacs.d/yow.txt.gz")
+
