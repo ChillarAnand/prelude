@@ -242,3 +242,7 @@ by Prelude.")
 
 ;; mysql for emacs
 (require 'mysql)
+
+
+;; auto save desktop
+(desktop-save-mode 1)
